@@ -4,6 +4,7 @@ Generates DirEttore playlists while observing a distance between the last artist
 
 ## Usage
 
+```
 Usage: Playlist generator for DirEttore (.dpl files) [options]
 
 Options:
@@ -17,6 +18,8 @@ Options:
 This app can generate playlists for the DirEttore software which observe a distance between artists and songs played.
 Only files with an .mp3 extension will be considered for the playlist.
 
-Example: 
+```
+
+## Example: 
 
 `.\PlaylistGenerator.exe  -d "C:\temp\Music" -o "C:\temp\test2.dpl"`

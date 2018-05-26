@@ -1,0 +1,6 @@
+src/.vs/*
+src/_NCrunch_*?/
+src/**/bin/*
+src/**/obj/*
+*.v3.ncrunchsolution*
+*.v3.ncrunchproject*

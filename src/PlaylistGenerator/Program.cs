@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.CommandLineUtils;
+using PlaylistGenerator.Core;
 using System;
 using System.IO;
 using System.Linq;

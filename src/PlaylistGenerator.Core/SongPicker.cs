@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PlaylistGenerator
+namespace PlaylistGenerator.Core
 {
     public class SongPicker
     {
@@ -19,6 +19,9 @@ namespace PlaylistGenerator
 
         public IReadOnlyList<Song> PickSongs(IReadOnlyList<Song> allSongs)
         {
+            if (allSongs.Count == 0)
+                throw new Exception("Can't pick songs when there are no songs available.");
+
             // https://softwareengineering.stackexchange.com/questions/194480/id-like-to-write-an-ultimate-shuffle-algorithm-to-sort-my-mp3-collection
             var playedSongNames = new LinkedList<string>();
             var playedArtists = new LinkedList<string>();

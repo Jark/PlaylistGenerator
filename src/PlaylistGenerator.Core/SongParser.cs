@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace PlaylistGenerator
+namespace PlaylistGenerator.Core
 {
     public class SongParser
     {

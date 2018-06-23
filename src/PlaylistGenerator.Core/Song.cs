@@ -1,4 +1,4 @@
-﻿namespace PlaylistGenerator
+﻿namespace PlaylistGenerator.Core
 {
     public class Song
     {

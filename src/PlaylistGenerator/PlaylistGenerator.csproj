@@ -13,6 +13,10 @@
     <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.4.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PlaylistGenerator.Core\PlaylistGenerator.Core.csproj" />
+  </ItemGroup>
   
   <PropertyGroup>
     <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>

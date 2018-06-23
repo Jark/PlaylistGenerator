@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using PlaylistGenerator;
+using PlaylistGenerator.Core;
 using System.Collections.Generic;
 
 namespace Tests

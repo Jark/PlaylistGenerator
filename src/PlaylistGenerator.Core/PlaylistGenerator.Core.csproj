@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+ <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>PlaylistGenerator.Core</RootNamespace>
+    <PackageVersion>1.0</PackageVersion>
+    <Title>PlaylistGenerator.Core</Title>
+    <Copyright>Copyright © 2018</Copyright>
+    <Description>Description of PlaylistGenerator.Core</Description>
+  </PropertyGroup>
+
+</Project>

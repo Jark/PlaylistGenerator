@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>PlaylistGenerator.UI</RootNamespace>
+    <PackageVersion>1.0</PackageVersion>
+    <Title>PlaylistGenerator.UI</Title>
+    <Copyright>Copyright © 2018</Copyright>
+    <Description>Description of PlaylistGenerator.UI</Description>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Eto.Forms" Version="2.4.1" />
+    <PackageReference Include="Eto.Serialization.Xaml" Version="2.4.1" />
+    <PackageReference Include="System.Collections.Immutable" Version="1.5.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\PlaylistGenerator.Core\PlaylistGenerator.Core.csproj" />
+  </ItemGroup>
+  
+</Project>

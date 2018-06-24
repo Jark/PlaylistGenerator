@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form
+	xmlns="http://schema.picoe.ca/eto.forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:local="clr-namespace:PlaylistGenerator.UI;assembly=PlaylistGenerator.UI"
+	Title="DirEttore Playlist Generator"
+	ClientSize="600, 350"
+	Padding="10"
+	>
+  <Form.Properties>
+    <local:InvertedBooleanConverter x:Key="invertedBooleanConverter" />
+  </Form.Properties>
+	<TableLayout Enabled="{Binding IsProcessing, Converter={StaticResource invertedBooleanConverter}}">
+    <TableRow>
+      <TableCell>
+        <TableLayout>
+          <TableRow>
+           <TableCell>
+             <Panel Padding="0,0,2,0">
+                <Label TextAlignment="Right">Music directory:</Label>
+             </Panel>
+           </TableCell> 
+           <TableCell>
+             <DynamicLayout>
+               <DynamicRow>
+                 <DynamicControl XScale="True">
+                    <Label Text="{Binding MusicDirectory}"/>
+                 </DynamicControl>
+                 <DynamicControl YScale="True">
+                    <Button Command="{Binding OpenSelectMusicDirectoryCommand}">Select</Button>  
+                 </DynamicControl>
+               </DynamicRow>
+             </DynamicLayout>
+           </TableCell> 
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              <Panel Padding="0,0,2,0">
+                <Label TextAlignment="Right">Playlist size:</Label>
+              </Panel>
+            </TableCell>
+            <TableCell>
+              <NumericStepper MinValue="20" MaximumDecimalPlaces="0" Value="{Binding PlaylistSize}" />
+            </TableCell>
+          </TableRow>
+        <TableRow>
+            <TableCell>
+              <Panel Padding="0,0,2,0">
+                <Label TextAlignment="Right">Artist and song spacing:</Label>
+              </Panel>
+            </TableCell>
+            <TableCell>
+              <NumericStepper MinValue="0" MaximumDecimalPlaces="0" Value="{Binding ArtistAndSongSpacing}" />
+            </TableCell>
+          </TableRow>
+        </TableLayout>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Button Text="Pick songs!" Command="{Binding PickSongsCommand}" />
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <Panel Padding="4">
+          <Label Text="{Binding StateMessage}" TextAlignment="Center" />
+        </Panel>
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>
+        <GridView DataStore="{Binding PickedSongs}">
+        <GridView.Columns>
+          <GridColumn HeaderText="Nº">
+            <TextBoxCell Binding="{Binding Number}" />
+          </GridColumn>
+          <GridColumn HeaderText="Artist">
+            <TextBoxCell Binding="{Binding Artist}" />
+          </GridColumn>
+          <GridColumn HeaderText="Name">
+            <TextBoxCell Binding="{Binding Name}" />
+          </GridColumn>
+          <GridColumn HeaderText="Path">
+            <TextBoxCell Binding="{Binding Path}" />
+          </GridColumn>
+        </GridView.Columns>
+      </GridView>
+      </TableCell>
+    </TableRow>
+	</TableLayout>
+
+	<Form.Menu>
+		<MenuBar>
+			<ButtonMenuItem Text="F&amp;ile">
+        <ButtonMenuItem Text="Save" Shortcut="CommonModifier+S" Command="{Binding SaveCommand}" />
+			</ButtonMenuItem>
+			<MenuBar.QuitItem>
+				<ButtonMenuItem Text="Quit" Shortcut="CommonModifier+Q" Click="HandleQuit" />
+			</MenuBar.QuitItem>
+			<MenuBar.AboutItem>
+				<ButtonMenuItem Text="About..." Click="HandleAbout" />
+			</MenuBar.AboutItem>
+		</MenuBar>
+	</Form.Menu>
+</Form>
